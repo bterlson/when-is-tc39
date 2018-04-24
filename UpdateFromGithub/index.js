@@ -22,6 +22,7 @@ module.exports = function(context) {
           'meeting-time': formatDateSpan(agenda.startDate, agenda.endDate),
           'meeting-days-left': String(daysTil(agenda.startDate)),
           'meeting-location': agenda.location,
+          'meeting-url': agenda.url,
           'meeting-agenda-days-left': String(
             daysTil(
               new Date(Number(agenda.startDate) - 1000 * 60 * 60 * 24 * 10)
@@ -49,7 +50,7 @@ module.exports = function(context) {
 };
 
 /**
- * @typedef { {'meeting-time': string,'meeting-days-left': string, 'meeting-location': string, 'meeting-agenda-days-left': string } } Template
+ * @typedef { {'meeting-time': string,'meeting-days-left': string, 'meeting-location': string, 'meeting-agenda-days-left': string, 'meeting-url': string } } Template
  */
 
 /**
@@ -156,7 +157,7 @@ function getYearsMonths(context, year) {
 }
 
 /**
- * @typedef {{ location: string, startDate: Date, endDate: Date }} Agenda
+ * @typedef {{ location: string, startDate: Date, endDate: Date, url: string }} Agenda
  */
 /**
  *
@@ -180,7 +181,11 @@ function parseAgenda(context, contents, month) {
   const agenda = {
     location,
     startDate,
-    endDate
+    endDate,
+    url: `https://github.com/tc39/agendas/blob/master/${startDate.getFullYear()}/${startDate.toLocaleString(
+      'en-US',
+      { month: '2-digit' }
+    )}.md`
   };
 
   return agenda;
