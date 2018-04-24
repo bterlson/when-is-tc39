@@ -1,6 +1,6 @@
 ## When Is TC39?
 
-[whenistc39.com](https://whenistc39.com) periodically updates a static website based on when the next TC39 meeting is. The next agenda is parsed from GitHub and rendered into a template (`template.html` in the root).
+[whenistc39.com](http://whenistc39.com) periodically updates a static website based on when the next TC39 meeting is. The next agenda is parsed from GitHub and rendered into a template (`template.html` in the root).
 
 ### Making Updates
 
