@@ -5,4 +5,4 @@
 ### Making Updates
 
 * **Changing the template**: To change the static text displayed on the site, edit `template.md`.
-* **Adding mroe info**": Agenda parsing is in `UpdateFromGithub/index.js`. Have at it!
+* **Adding more info**": Agenda parsing is in `UpdateFromGithub/index.js`. Have at it!
